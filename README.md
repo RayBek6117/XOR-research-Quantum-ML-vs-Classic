@@ -10,7 +10,9 @@ in both classical and quantum learning systems.
 This repository is structured as a **reproducible research project**
 with automated experiment execution, figure generation, and result logging.
 
+
 ---
+
 
 ## Models Studied
 
@@ -25,7 +27,9 @@ The following models are implemented and evaluated:
 - **Variational Quantum Classifier (VQC)**  
   Parameterized quantum circuit with classical optimization.
 
+
 ---
+
 
 ## Experimental Setup
 
@@ -38,7 +42,9 @@ Synthetic XOR datasets are generated from **Gaussian clusters** with configurabl
 - train / test split
 - fixed random seeds for reproducibility
 
+
 ---
+
 
 ### Quantum Model Parameters
 
@@ -55,21 +61,14 @@ For the VQC, the following parameters are explored:
 
 ```text
 xor-qml-vs-classic/
-├─ README.md
-├─ LICENSE
-├─ CITATION.cff
 ├─ requirements.txt
 ├─ src/
-│  ├─ data/        # dataset generation
-│  ├─ models/      # linear, MLP, VQC
-│  ├─ train/       # training loops
-│  ├─ eval/        # evaluation & plotting
-│  └─ utils/       # seeds, logging, helpers
-├─ configs/        # experiment configurations
-├─ scripts/        # experiment runners
-├─ experiments/    # saved experiment metadata
-├─ results/
-│  ├─ figures/
-│  ├─ tables/
-│  └─ logs/
-└─ report/         # research-style write-up
+│  └─ quantum/
+│     ├─ __init__.py
+│     ├─ data.py          # XOR data generation + split
+│     ├─ preprocess.py    # scaling -> angles
+│     ├─ vqc.py           # circuit builder + loss + predict
+│     └─ metrics.py       # accuracy + helpers
+└─ experiments/
+   └─ quantum/
+      └─ run_vqc.py       # single entry-point: trains + plots + saves CSV
