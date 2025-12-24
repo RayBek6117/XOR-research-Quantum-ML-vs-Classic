@@ -1,0 +1,2 @@
+model,layers,shots,noise,n_per_cluster,seed,train_iters,stepsize,train_time_sec,train_acc,test_acc,final_train_loss,params_count
+VQC,2,None,0.1,100,42,250,0.15,999.1146125793457,1.0,1.0,0.024203184744454345,12
