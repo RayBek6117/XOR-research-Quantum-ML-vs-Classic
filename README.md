@@ -61,22 +61,43 @@ For the VQC, the following parameters are explored:
 
 ```text
 xor-qml-vs-classic/
-├─ requirements.txt
-├─ src/
-│  └─ quantum/
-│     ├─ __init__.py
-│     ├─ data.py          # XOR data generation + split
-│     ├─ preprocess.py    # scaling -> angles
-│     ├─ vqc.py           # circuit builder + loss + predict
-│     └─ metrics.py       # accuracy + helpers
-└─ experiments/
-   └─ quantum/
-      └─ run_vqc.py       # single entry-point: trains + plots + saves CSV
+├─ requirements.txt        # Python dependencies for full reproducibility
+├─ LICENSE.txt             # Project license (e.g. MIT)
+├─ README.md               # Project overview, usage instructions, experiment description
+│
+├─ src/                    # Core library code (no experiments here)
+│  ├─ classic/             # Classical ML implementations
+│  │  ├─ __init__.py       # Module initializer
+│  │  ├─ activations.py    # Activation functions (e.g. sigmoid)
+│  │  ├─ data.py           # XOR dataset generation and train/test split
+│  │  ├─ linear.py         # Linear classifier (training + inference)
+│  │  ├─ metrics.py        # Evaluation metrics (accuracy, loss)
+│  │  ├─ mlp.py            # Multilayer Perceptron (MLP) implementation
+│  │  ├─ plots.py          # Visualization utilities (scatter, boundaries, curves)
+│  │  └─ utils.py          # Helper functions (I/O, directories, CSV saving)
+│  │
+│  └─ quantum/             # Quantum ML implementations
+│     ├─ __init__.py       # Module initializer
+│     ├─ data.py           # XOR data handling for quantum experiments
+│     ├─ preprocess.py     # Feature scaling and angle encoding
+│     ├─ vqc.py            # Variational Quantum Classifier (ansatz, loss, inference)
+│     └─ metrics.py        # Evaluation metrics for quantum models
+│
+└─ experiments/            # Experiment scripts and generated results
+   ├─ classic/             # Classical model experiments
+   │  ├─ run_classic_grid.py      # Large-scale sweeps (noise, size, hidden units)
+   │  ├─ run_classic_required.py  # Minimal required experiments for the paper
+   │  └─ results/                 # Generated figures and CSV tables
+   │     └─ ...
+   │
+   └─ quantum/             # Quantum model experiments
+      ├─ run_vqc.py        # VQC experiments (training, depth, shots, robustness)
+      └─ results/          # Generated quantum figures and metrics
+         └─ ...
+
 ```
 
 ## Authors
-- Miras Seilkhan  
-Email: seilkhan.miras6117@gmail.com
-- Adilbek Taizhanov
-Email: adilbek300108@gmail.com
+- Miras Seilkhan | seilkhan.miras6117@gmail.com
+- Adilbek Taizhanov | adilbek300108@gmail.com
 
