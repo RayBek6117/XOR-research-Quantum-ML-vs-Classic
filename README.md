@@ -72,3 +72,11 @@ xor-qml-vs-classic/
 └─ experiments/
    └─ quantum/
       └─ run_vqc.py       # single entry-point: trains + plots + saves CSV
+```
+
+## Authors
+- Miras Seilkhan  
+Email: seilkhan.miras6117@gmail.com
+- Adilbek Taizhanov
+Email: adilbek300108@gmail.com
+
